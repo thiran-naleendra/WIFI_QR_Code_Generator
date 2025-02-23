@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiFi QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>WiFi QR Code Generator</h1>
+        <div class="card-content">
+          <div class="form-section">
+            <div class="form-group">
+              <label for="ssid">WiFi Name (SSID)</label>
+              <input type="text" id="ssid" placeholder="Enter WiFi name" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter WiFi password" required />
+            </div>
+            <button id="generate" class="generate-btn">Generate QR Code</button>
+          </div>
+          <div id="qr-container" class="qr-container">
+            <div id="qr-placeholder" class="qr-placeholder">Enter WiFi details to generate QR code</div>
+            <canvas id="qr-code" style="display: none"></canvas>
+            <div class="qr-actions">
+              <p class="hint">Scan this QR code to connect to the WiFi network</p>
+              <button id="download" class="download-btn" style="display: none">Download QR Code</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
